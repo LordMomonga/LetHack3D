@@ -1,12 +1,19 @@
-import { Canvas } from "@react-three/fiber";
-import { Experience } from "./components/Experience";
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Courses1 } from './Courses1';
+import { Gaming } from './components/Gaming';
 function App() {
   return (
-    <Canvas shadows camera={{ position: [3, 3, 3], fov: 30 }}>
-      <color attach="background" args={["#ececec"]} />
-      <Experience />
-    </Canvas>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/courses1" element={<Courses1 />} />
+      <Route path="/game" element={<Gaming />} />
+
+      {/* <Route path="/about" element={<About />} /> */}
+    </Routes>
+  </BrowserRouter>
+
+
+   
   );
 }
 
