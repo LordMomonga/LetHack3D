@@ -1,19 +1,20 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Courses1 } from './Courses1';
-import { Gaming } from './components/Gaming';
+import { BrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+import Routeur from './Routeur';
+
 function App() {
+  const queryClient = new QueryClient();
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/courses1" element={<Courses1 />} />
-      <Route path="/game" element={<Gaming />} />
-
-      {/* <Route path="/about" element={<About />} /> */}
-    </Routes>
-  </BrowserRouter>
-
-
-   
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routeur />
+        </BrowserRouter>
+      </Provider>
+    </QueryClientProvider>
   );
 }
 
