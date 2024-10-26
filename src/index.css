@@ -1,13 +1,237 @@
-/* ./src/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-#root {
-  width: 100vw;
-  height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
+body,
+html,
+#root {
+  overflow-x: hidden !important;
+  width: 100vw !important;
+}
+
+::selection {
+  @apply text-white bg-primary;
+}
+
+::-webkit-scrollbar {
+  @apply w-1;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 max-w-[5px] rounded-xl;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
+
+::-webkit-scrollbar-track {
+  @apply p-[2px] bg-light/30;
+}
+
+#navbar .active,
+#navbar .active .add_btn_active {
+  @apply bg-primary !text-white transition-all;
+}
+
+/* placeholder */
+
 body {
-  margin: 0;
+  @apply bg-light dark:bg-dark text-writing dark:text-white;
+}
+
+input,
+select {
+  @apply border border-gray-400 dark:border-transparent;
+}
+
+.btn {
+  @apply inline-flex uppercase text-sm md:text-base items-center px-6 py-3 font-bold text-white rounded-xl cursor-pointer bg-primary w-fit hover:bg-primary/90 focus:ring-4 focus:ring-primary/30;
+}
+
+.btn-secondary {
+  @apply inline-flex uppercase text-sm md:text-base items-center px-6 py-3 font-bold text-white rounded-xl cursor-pointer bg-secondary w-fit hover:bg-secondary/90 focus:ring-4 focus:ring-secondary/30;
+}
+
+.btn-gray {
+  @apply inline-flex uppercase text-sm md:text-base items-center px-6 py-3 font-bold text-white rounded-xl cursor-pointer bg-gray-500 w-fit hover:bg-gray-500/90 focus:ring-4 focus:ring-gray-500/30;
+}
+
+.input-field {
+  @apply relative border-[1px] border-white dark:border-none p-4 transition-all dark:shadow-none shadow-[-3px_-3px_7px_#ffffff_,_3px_3px_5px_#ceced1] focus:shadow-neomorphism font-medium rounded-full outline-none bg-light dark:bg-tertiary text-writing dark:text-white;
+}
+
+.heroHeadText {
+  @apply font-black text-writing dark:text-white sm:text-[38px] xs:text-[34px] text-[30px] mt-2;
+}
+
+.heroSubText {
+  @apply text-writing/80 dark:text-[#dfd9ff] font-medium lg:text-[26px] sm:text-[23px] xs:text-[18px] text-[16px] lg:leading-[40px];
+}
+
+.sectionHeadText {
+  @apply text-dark dark:text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px];
+}
+
+.sectionSubText {
+  @apply hidden sm:text-[18px] text-[14px] dark:text-white-100 uppercase tracking-wider;
+}
+
+.paddingX {
+  @apply px-6 sm:px-16;
+}
+
+.paddingY {
+  @apply py-6 sm:py-16;
+}
+
+.padding {
+  @apply px-6 py-10 sm:px-16 sm:py-16;
+}
+
+.box-center {
+  @apply flex items-center justify-center;
+}
+
+.link {
+  @apply font-bold text-primary hover:underline;
+}
+
+.drink-card .swiper-pagination-bullet-active {
+  background-color: white;
+}
+
+.drink-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  
+  /* @apply shadow-[inset_-10px_0px_6px_black]; */
+  @apply rounded-full bg-gradient-to-r from-transparent via-black/30 to-dark/90;
+}
+
+.animate-updown-lg {
+  animation: updown 6s linear infinite;
+}
+
+.animate-updown-sm {
+  animation: updown2 4s linear infinite;
+}
+
+.journey_cards_cols {
+  column-count: 1;
+  column-gap: 1em;
+}
+
+.journey_cards_cols .car_card {
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  width: 90vw;
+}
+
+@media (min-width: 570px) {
+  .journey_cards_cols {
+    column-count: 2;
+  }
+
+  .journey_cards_cols .car_card {
+    width: 256px;
+  }
+}
+
+@media (min-width: 900px) {
+  .journey_cards_cols {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1280px) {
+  .journey_cards_cols {
+    column-count: 4;
+  }
+}
+
+.underline_custom::after {
+  content: "";
+  @apply absolute bg-primary h-1 w-8 bottom-0 left-0;
+}
+
+.card_destination::after {
+  content: "";
+  @apply h-4 w-4 rounded-full absolute top-0 -left-[10px] bg-white dark:bg-dark-accent border-4 border-writing dark:border-white;
+}
+
+.card_destination::before {
+  content: "";
+  @apply h-4 w-4 rounded-full absolute bottom-0 -left-[10px] bg-white dark:bg-dark-accent border-4 border-writing dark:border-white;
+}
+
+.sonner_notification li {
+  @apply !bg-white/70 dark:!bg-dark/70 backdrop-blur-lg dark:!border-dark-accent dark:!text-white p-4;
+}
+
+.sonner_notification li button {
+  @apply !bg-light/70 dark:!bg-dark/70 backdrop-blur-lg dark:!border-dark-accent dark:!text-white !w-6 !h-6;
+}
+
+.sonner_notification li[data-type="warning"] svg {
+  @apply text-orange-300;
+}
+
+.sonner_notification li[data-type="error"] svg {
+  @apply text-red-300;
+}
+
+.sonner_notification li[data-type="info"] svg {
+  @apply text-blue-300;
+}
+
+.sonner_notification li[data-type="success"] svg {
+  @apply text-green-300;
+}
+
+.react-tel-input .country-list .country.highlight {
+  @apply bg-light dark:bg-dark-accent;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes updown2 {
+  0% {
+    transform: translateY(-5px);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
 }
