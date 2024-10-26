@@ -16,9 +16,65 @@ export default function Courses() {
     queryFn: fetchJourneys,
   });
 
-  const [journeys, setJourneys] = useState([
-
-  ])
+  const [journeys, setJourneys] = useState(
+    [
+      {
+        id: 1,
+        titre: "Exploration d'un moteur en 3D",
+        description: "Apprenez le fonctionnement d'un moteur grâce à un modèle 3D interactif.",
+        niveau: "Intermédiaire",
+        duree: "5 heures",
+        image: "https://exemple.com/images/moteur.jpg",
+        categorie: "Mécanique",
+        urlCours: "https://exemple.com/cours/moteur-3d",
+        model3D: "https://exemple.com/models/moteur.glb",
+        typeInteraction: "vue éclatée, rotation 360°",
+        formatModel: "glTF",
+        price: 230000,
+      },
+      {
+        id: 2,
+        titre: "Anatomie humaine en 3D",
+        description: "Explorez l'anatomie humaine en 3D pour comprendre les systèmes du corps.",
+        niveau: "Débutant",
+        duree: "6 heures",
+        image: "https://exemple.com/images/anatomie.jpg",
+        categorie: "Biologie",
+        urlCours: "https://exemple.com/cours/anatomie-3d",
+        model3D: "https://exemple.com/models/anatomie.glb",
+        typeInteraction: "zoom, rotation 360°",
+        formatModel: "glTF",
+      },
+      {
+        id: 3,
+        titre: "Architecture de bâtiments en 3D",
+        description: "Découvrez des modèles 3D de bâtiments et explorez leur architecture interne.",
+        niveau: "Avancé",
+        duree: "7 heures",
+        image: "https://exemple.com/images/architecture.jpg",
+        categorie: "Architecture",
+        urlCours: "https://exemple.com/cours/architecture-3d",
+        model3D: "https://exemple.com/models/batiment.glb",
+        typeInteraction: "visite virtuelle, vue éclatée",
+        formatModel: "glTF",
+        price: 230000,
+      },
+      {
+        id: 4,
+        titre: "Système solaire en 3D",
+        description: "Interagissez avec un modèle 3D du système solaire pour explorer les planètes.",
+        niveau: "Débutant",
+        duree: "3 heures",
+        image: "https://exemple.com/images/systeme-solaire.jpg",
+        categorie: "Astronomie",
+        urlCours: "https://exemple.com/cours/systeme-solaire-3d",
+        model3D: "https://exemple.com/models/systeme-solaire.glb",
+        typeInteraction: "rotation, zoom",
+        formatModel: "glTF",
+        price: 230000,
+      }
+    ]
+)
 
 
   return (
@@ -51,7 +107,7 @@ export default function Courses() {
       ) : journeys?.length ? (
         <div className="journey_cards_cols">
           {journeys?.map((journey, key) => (
-            <CarCard journey={journey} key={key} />
+            <CarCard course={journey} key={key} />
           ))}
         </div>
       ) : (

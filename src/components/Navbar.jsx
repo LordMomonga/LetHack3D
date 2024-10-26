@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   const nav = [
     {
-      link: "/courses",
+      link: "/",
       icon: BiHomeAlt,
       name: "Home",
     },
