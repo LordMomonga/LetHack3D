@@ -16,11 +16,15 @@ export function Squel(props) {
 
   const [troncPosition, setTroncPosition] = useState([0, 0, 0]);
   const [plecsusPosition, setPlecsusPosition] = useState([0, 0, 0]);
+  const [crane, setCrane] = useState([0, 0, 0]);
+
    const [sub, setSub] = useState([0, 0, 0]);
    const [rotationY, setRotationY] = useState(0); // State to track rotation angle
 
    const [message, setMessage] = useState(null); // Holds message content and visibility
    const [message2, setMessage2] = useState(null); // Holds message content and visibility
+   const [message3, setMessage3] = useState(null); // Holds message content and visibility
+
 
    const [messagePosition, setMessagePosition] = useState([0, 0, 0]); // Controls message position
 
@@ -45,10 +49,20 @@ export function Squel(props) {
     setPlecsusPosition((prev) => [prev[0] - 25, prev[1], prev[2]]);
     setMessage2('what is a pelvic bones ?')
     setMessage(null)
+    setMessage3(null)
+
+  };
+
+  const handleCrane = () => {
+    setCrane((prev) => [prev[0] - 25, prev[1], prev[2]]);
+   
 
   };
   const handlesub1 = () =>{
-    setSub((prev) => [prev[0] + 20, prev[1], prev[2]]);
+    setSub((prev) => [prev[0] - 20, prev[1], prev[2]]);
+    setMessage3('what is a skull  ?')
+    setMessage(null)
+    setMessage2(null)
   }
   return (
     <>
@@ -96,6 +110,17 @@ export function Squel(props) {
           </div>
         </Html>
       )}
+
+{message3 && (
+        <Html position={sub}
+        
+
+        >
+          <div style={{ background: 'white', padding: '10px', borderRadius: '4px', fontSize: '12px', width:"120px", fontFamily:"Roboto Mono"}}>
+          <h1 style={{ fontSize: '13px' }}>{message3}</h1>  
+          </div>
+        </Html>
+      )}
     </group>
 
     <Html position={[ 1, 1, -1]}
@@ -133,6 +158,21 @@ export function Squel(props) {
             </div>
             </div>}
          
+            {message3 &&<div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+            <span style={{ fontSize:"15px", fontWeight:"bold", textAlign:"center", marginBottom:"5px"}}> {message3}  </span>
+            <div style={{marginTop:"10px", marginBotom:"5px"}}>
+            The bones that form the head. The skull is made up of cranial bones (bones that surround and protect the brain) and facial bones 
+            (bones that form the eye sockets, nose, cheeks, jaw, and other parts of the face). An opening at the base of the skull is where 
+            the spinal cord connects to the brain. Also called cranium.
+            </div>
+            <div style={{ width: '200px', height: '200px', overflow: 'hidden', borderRadius:"5px", marginTop:"10px" }}>
+               <img src="/sk.png" alt="Rib" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div style={{marginTop:"10px"}}>
+              <p><strong>Function</strong>:structurally supportive and protective.</p>
+
+            </div>
+            </div>}
           </div>
         </Html>
     </>

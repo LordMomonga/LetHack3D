@@ -21,8 +21,8 @@ export const Courses1 = () => {
         <div className="mt-5"> 
         <button className="block bg-blue-500 text-white  px-2 rounded-sm flex items-center gap-2 py-1"> <AiFillPlayCircle />
         Start a simulation</button>
-        <button className="block bg-white text-gray-500 mt-5 px-2 rounded-sm flex items-center gap-2 py-1"> <CgGames /> Start a Quizz</button>
-     <Link to="/game"> <button className="block border-[2px] border-red-500 text-white mt-5 px-2 rounded-sm flex items-center gap-2 py-1"> <RxCross2 /> Quit the Courses</button></Link>  
+       <Link to='/game'> <button className="block bg-white text-gray-500 mt-5 px-2 rounded-sm flex items-center gap-2 py-1"> <CgGames /> Start a Quizz</button></Link>
+     <Link to="/"> <button className="block border-[2px] border-red-500 text-white mt-5 px-2 rounded-sm flex items-center gap-2 py-1"> <RxCross2 /> Quit the Courses</button></Link>  
 
         </div>
       </div>

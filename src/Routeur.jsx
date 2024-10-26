@@ -10,7 +10,9 @@ import DisableRouteWhenUserIsLog from "./components/DisableRouteWhenUserIsLog";
 import RegisterPage from "./Pages/RegisterPage";
 import { Courses1 } from "./Courses1";
 import { Gaming } from "./components/Gaming";
-
+import { Courses3 } from "./Courses3";
+import { Courses4 } from "./courses/Courses4";
+import { Courses5 } from "./courses/Courses5";
 const Routeur = () => {
 
     return (
@@ -33,6 +35,12 @@ const Routeur = () => {
                 </Route>
                 <Route path="/courses1" element={<Courses1 />} />
                 <Route path="/game" element={<Gaming />} />
+                <Route path="/courses3" element={<Courses3 />} />
+                <Route path="/courses4" element={<Courses4 />} />
+                <Route path="/courses5" element={<Courses5 />} />
+
+
+
 
                 {/* <Route path="/about" element={<About />} /> */}
             </Routes>
