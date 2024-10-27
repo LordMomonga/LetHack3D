@@ -138,7 +138,7 @@ useFrame(() => {
       </group>
     </group>
 
-    <Html position={[ 8, 6, -5]}>
+    <Html position={[ 0, 0, 0]}>
     <div  style={{ background: 'white', padding: '10px', borderRadius: '4px', fontSize: '12px', width:"290px", fontFamily:"Roboto Mono"}}>
     <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
             <span style={{ fontSize:"15px", fontWeight:"bold", textAlign:"center", marginBottom:"5px"}}>  </span>

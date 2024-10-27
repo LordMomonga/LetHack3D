@@ -26,7 +26,7 @@ export const Courses1 = () => {
 
         </div>
       </div>
-      <Canvas className="z-0 " shadows camera={{ position: [3, 3, 3], fov: 30 }}>
+      <Canvas className="z-0  " shadows camera={{ position: [3, 3, 3], fov: 30 }}>
       <color attach="background" args={["gray"]} />
      
       <Experience />

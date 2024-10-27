@@ -9,6 +9,11 @@ import { useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import { Html } from '@react-three/drei';
+import plecsusAudio from "/pelvic.mp3"
+import ribAudio from "/rib.mp3"
+import skullAudio from "/skull.mp3"
+
+
 export function Squel(props) {
   const { nodes, materials } = useGLTF('/squel.glb')
 
@@ -42,7 +47,8 @@ export function Squel(props) {
     setMessage('What is Rib Cage?'); // Set the message text
     setMessage2(null)
 // Adjust as needed
-   
+new Audio(ribAudio).play();
+
   }
   // Handle click for Plecsus
   const handlePlecsusClick = () => {
@@ -50,7 +56,7 @@ export function Squel(props) {
     setMessage2('what is a pelvic bones ?')
     setMessage(null)
     setMessage3(null)
-
+    new Audio(plecsusAudio).play();
   };
 
   const handleCrane = () => {
@@ -63,6 +69,8 @@ export function Squel(props) {
     setMessage3('what is a skull  ?')
     setMessage(null)
     setMessage2(null)
+    new Audio(skullAudio).play();
+
   }
   return (
     <>

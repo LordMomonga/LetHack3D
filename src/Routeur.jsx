@@ -13,6 +13,8 @@ import { Gaming } from "./components/Gaming";
 import { Courses3 } from "./Courses3";
 import { Courses4 } from "./courses/Courses4";
 import { Courses5 } from "./courses/Courses5";
+import { Gistory } from "./courses/Gistory.JSX";
+import { Courses6 } from "./courses/Courses6";
 const Routeur = () => {
 
     return (
@@ -38,6 +40,9 @@ const Routeur = () => {
                 <Route path="/courses3" element={<Courses3 />} />
                 <Route path="/courses4" element={<Courses4 />} />
                 <Route path="/courses5" element={<Courses5 />} />
+                <Route path="/historyGame" element={<Gistory />} />
+                <Route path="/courses6" element={<Courses6 />} />
+
 
 
 
